@@ -1,0 +1,9 @@
+.DS_Store
+
+.idea
+
+node_modules/
+dist/
+
+# DAG files for private network setup are too large for GitHub
+src/GethTestNetwork/geth-node/full-R23-*

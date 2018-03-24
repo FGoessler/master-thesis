@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can handle undefined balance 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h3>
+      0x123456789abcde
+    </h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            Address
+          </td>
+          <td
+            class="hash"
+          >
+            0x123456789abcde
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Balance
+          </td>
+          <td>
+            ...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      No Contract Data
+    </div>
+  </div>
+</div>
+`;
+
+exports[`chart shows a chart 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h3>
+      0x123456789abcde
+    </h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            Address
+          </td>
+          <td
+            class="hash"
+          >
+            0x123456789abcde
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Balance
+          </td>
+          <td>
+            ...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      No Contract Data
+    </div>
+    <div>
+      <h4>
+        Balance Chart
+      </h4>
+      <canvas
+        height="150"
+        width="300"
+      />
+      <button>
+        Load data for older blocks
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`shows information about an address 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h3>
+      0x123456789abcde
+    </h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            Address
+          </td>
+          <td
+            class="hash"
+          >
+            0x123456789abcde
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Balance
+          </td>
+          <td>
+            10000
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      No Contract Data
+    </div>
+  </div>
+</div>
+`;

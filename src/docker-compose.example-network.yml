@@ -1,0 +1,87 @@
+version: "2"
+
+services:
+
+  ethnode:
+    build: GethTestNetwork
+    restart: on-failure
+    container_name: ethnode-1-example-network
+    hostname: ethnode-1-example-network
+    entrypoint: /root/start.sh
+    command: '--mine --datadir=/root/.ethereum/devchain --unlock 0xf1a25936b922d122e03ff95ebd1765b0c2ec8f08,0xbe32869ae95f64fae54353a08ed65e63cef4bac7,0x0ff5c2f25c394a1e69153d658d10fec6a90bc668,0xaae00f546ab93bf19cc59b9dbf59db23076598d7 --password /root/data/password --nodekeyhex=091bd6067cb4612df85d9c1ff85cc47f259ced4d4cd99816b14f35650f59c322 --rpcapi "db,personal,eth,net,web3" --rpccorsdomain="*" --networkid=1234 --rpc --rpcaddr="0.0.0.0" init=/root/data/genesis.json'
+    ports:
+      - "30303:30303"
+      - "30303:30303/udp"
+      - "8545:8545"
+
+  #Payment Server 1
+
+  payment-server-1:
+    build: PaymentServer
+    image: payment-server
+    container_name: payment-server-1
+    command: npm run start
+    ports:
+      - "3001:3000"
+      - "9231:9229"
+    links:
+      - "ethnode:ethnode"
+      - "redis-db-1:persistence"
+
+  redis-db-1:
+    image: redis:3.0.7
+
+  #Payment Server 2
+
+  payment-server-2:
+    build: PaymentServer
+    image: payment-server
+    container_name: payment-server-2
+    command: npm run start
+    ports:
+      - "3002:3000"
+      - "9232:9229"
+    links:
+      - "ethnode:ethnode"
+      - "redis-db-2:persistence"
+
+  redis-db-2:
+    image: redis:3.0.7
+
+
+  # Actual Services
+
+  persistence-service:
+    build:
+      context: ./ClientSide
+      dockerfile: ./Dockerfiles/Dockerfile-PersistenceService
+    image: persistence-service
+    container_name: persistence-service
+    links:
+      - payment-server-1
+    ports:
+      - "8001:3000"
+
+  random-nr-service:
+    build:
+      context: ./ClientSide
+      dockerfile: ./Dockerfiles/Dockerfile-RandomNrService
+    image: random-nr-service
+    container_name: random-nr-service
+    links:
+      - payment-server-1
+    ports:
+      - "8002:3000"
+
+  public-service:
+    build:
+      context: ./ClientSide
+      dockerfile: ./Dockerfiles/Dockerfile-PublicService
+    image: public-service
+    container_name: public-service
+    links:
+      - persistence-service
+      - random-nr-service
+      - payment-server-2
+    ports:
+      - "8003:3000"

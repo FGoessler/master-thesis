@@ -1,0 +1,34 @@
+version: "2"
+
+services:
+  payment-server:
+    build: PaymentServer
+    image: payment-server
+    container_name: payment-server-ci
+    ports:
+      - "3000:3000"
+    links:
+      - ethnode
+      - "redis-db:persistence"
+
+  ethnode:
+    build: TestRPCTestNetwork
+    image: testrpc
+    container_name: ethnode-ci
+    ports:
+      - "8545:8545"
+
+  redis-db:
+    image: redis:3.0.7
+    ports:
+      - "6379:6379"
+
+  test:
+    build:
+      context: .
+      dockerfile: ./IntegrationTests/Dockerfile
+    image: integration-tests
+    container_name: integration-tests-container
+    links:
+      - ethnode
+      - payment-server

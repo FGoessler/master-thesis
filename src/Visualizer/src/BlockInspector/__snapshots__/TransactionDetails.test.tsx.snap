@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shows information about a contract deployment transaction 1`] = `
+<div>
+  <li
+    data-reactroot=""
+  >
+    <!-- react-text: 2 -->
+    0xffff1a
+    <!-- /react-text -->
+    <br />
+    <span
+      class="highlight"
+    >
+      Contract Deployment Transaction
+    </span>
+    <br />
+    <!-- react-text: 6 -->
+    From:
+    <!-- /react-text -->
+    <a
+      class="fromAddress hash"
+    >
+      0xdd1a
+    </a>
+    <br />
+    <!-- react-text: 9 -->
+    Sum: 
+    <!-- /react-text -->
+    <span
+      class="hash"
+    >
+      <!-- react-text: 11 -->
+      0
+      <!-- /react-text -->
+      <!-- react-text: 12 -->
+      WEI
+      <!-- /react-text -->
+    </span>
+    <br />
+    <!-- react-text: 14 -->
+    Gas used: 
+    <!-- /react-text -->
+    <span
+      class="hash"
+    >
+      <!-- react-text: 16 -->
+      -
+      <!-- /react-text -->
+      <!-- react-text: 17 -->
+      WEI
+      <!-- /react-text -->
+    </span>
+    <br />
+  </li>
+</div>
+`;
+
+exports[`shows information about a normal transaction 1`] = `
+<div>
+  <li
+    data-reactroot=""
+  >
+    <!-- react-text: 2 -->
+    0xffff1a
+    <!-- /react-text -->
+    <br />
+    <!-- react-text: 4 -->
+    From:
+    <!-- /react-text -->
+    <a
+      class="fromAddress hash"
+    >
+      0xdd1a
+    </a>
+    <br />
+    <!-- react-text: 7 -->
+    To:
+    <!-- /react-text -->
+    <a
+      class="toAddress hash"
+    >
+      0xdd2b
+    </a>
+    <br />
+    <!-- react-text: 10 -->
+    Sum: 
+    <!-- /react-text -->
+    <span
+      class="hash"
+    >
+      <!-- react-text: 12 -->
+      0
+      <!-- /react-text -->
+      <!-- react-text: 13 -->
+      WEI
+      <!-- /react-text -->
+    </span>
+    <br />
+    <!-- react-text: 15 -->
+    Gas used: 
+    <!-- /react-text -->
+    <span
+      class="hash"
+    >
+      <!-- react-text: 17 -->
+      10000
+      <!-- /react-text -->
+      <!-- react-text: 18 -->
+      WEI
+      <!-- /react-text -->
+    </span>
+    <br />
+    <!-- react-text: 20 -->
+    Transaction Data:
+    <!-- /react-text -->
+    <div
+      class="json"
+    />
+    <!-- react-text: 22 -->
+    Logs:
+    <!-- /react-text -->
+    <div
+      class="json"
+    >
+      No logs
+    </div>
+  </li>
+</div>
+`;

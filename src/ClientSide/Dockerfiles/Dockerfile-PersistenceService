@@ -1,0 +1,21 @@
+# Pull base image.
+FROM node:8.1.1
+
+# Create workdir
+RUN mkdir -p /usr/src
+
+# Copy PaymentClientLib sources
+COPY PaymentClientLib /usr/src/PaymentClientLib
+WORKDIR /usr/src/PaymentClientLib
+RUN yarn install
+
+# Copy app sources
+COPY ExampleNetwork/PersistenceService /usr/src/example/PersistenceService
+WORKDIR /usr/src/example/PersistenceService
+RUN yarn install
+
+# Define default command.
+CMD yarn run start
+
+# Expose ports.
+EXPOSE 3000

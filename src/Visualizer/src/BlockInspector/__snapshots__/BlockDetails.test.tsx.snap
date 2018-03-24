@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shows information about a block loaded from the blocklist service 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h3>
+      0x2a
+    </h3>
+    <table
+      class="detailsTable"
+    >
+      <tbody>
+        <tr>
+          <td>
+            Hash
+          </td>
+          <td
+            class="hash"
+          >
+            0x2a
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Number
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Timestamp
+          </td>
+          <td>
+            Fri, 02 Jan 1970 03:46:40 GMT
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Parent Hash
+          </td>
+          <td
+            class="hash"
+          >
+            0x1a
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Transactions
+          </td>
+          <td>
+            <ul>
+              <li>
+                <!-- react-text: 22 -->
+                0xffff1a
+                <!-- /react-text -->
+                <br />
+                <!-- react-text: 24 -->
+                From:
+                <!-- /react-text -->
+                <a
+                  class="fromAddress hash"
+                >
+                  0xdd1a
+                </a>
+                <br />
+                <!-- react-text: 27 -->
+                To:
+                <!-- /react-text -->
+                <a
+                  class="toAddress hash"
+                >
+                  0xdd2b
+                </a>
+                <br />
+                <!-- react-text: 30 -->
+                Sum: 
+                <!-- /react-text -->
+                <span
+                  class="hash"
+                >
+                  <!-- react-text: 32 -->
+                  0
+                  <!-- /react-text -->
+                  <!-- react-text: 33 -->
+                  WEI
+                  <!-- /react-text -->
+                </span>
+                <br />
+                <!-- react-text: 35 -->
+                Gas used: 
+                <!-- /react-text -->
+                <span
+                  class="hash"
+                >
+                  <!-- react-text: 37 -->
+                  -
+                  <!-- /react-text -->
+                  <!-- react-text: 38 -->
+                  WEI
+                  <!-- /react-text -->
+                </span>
+                <br />
+                <!-- react-text: 40 -->
+                Transaction Data:
+                <!-- /react-text -->
+                <div
+                  class="json"
+                />
+                <!-- react-text: 42 -->
+                Logs:
+                <!-- /react-text -->
+                <div
+                  class="json"
+                >
+                  No logs
+                </div>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

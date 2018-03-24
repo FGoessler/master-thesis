@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+
+  # Actual Services
+
+  persistence-service:
+    image: ${DOCKER_REGISTRY_URL}/fgps/persistence-service:latest
+    cpu_shares: 50
+    mem_limit: 524288000
+    ports:
+      - "8001:3000"
+    environment:
+      - PAYMENT_INACTIVE=true
+
+  random-nr-service:
+    image: ${DOCKER_REGISTRY_URL}/fgps/random-nr-service:latest
+    cpu_shares: 50
+    mem_limit: 524288000
+    ports:
+      - "8002:3000"
+    environment:
+      - PAYMENT_INACTIVE=true
+
+  public-service:
+    image: ${DOCKER_REGISTRY_URL}/fgps/public-service:latest
+    cpu_shares: 50
+    mem_limit: 524288000
+    links:
+      - persistence-service
+      - random-nr-service
+    ports:
+      - "8003:3000"
+    environment:
+      - PAYMENT_INACTIVE=true

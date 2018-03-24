@@ -1,0 +1,17 @@
+{
+  "name": "public-service",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.15.3",
+    "payment-client-lib": "file:../../PaymentClientLib",
+    "wait-for-port": "0.0.2"
+  }
+}

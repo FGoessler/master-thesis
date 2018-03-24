@@ -1,0 +1,15 @@
+{
+  "port": 3000,
+  "ethNodeUrl": "http://ethnode:8545",
+  "enforceSignedIncomingRequests": true,
+  "persistence": {
+    "type": "redis",
+    "redisConfig": {
+      "host": "persistence"
+    }
+  },
+  "mediator": {
+    "transactionRetryInterval": 1,
+    "transactionMaxRetryCount": 30
+  }
+}

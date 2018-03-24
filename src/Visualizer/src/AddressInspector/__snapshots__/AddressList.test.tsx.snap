@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shows a list of addresses 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h3>
+      Addresses
+    </h3>
+    <input
+      type="text"
+      placeholder="Add address"
+      value=""
+    />
+    <button>
+      Add
+    </button>
+    <ul>
+      <li
+        class="list-item hash"
+      >
+        0x123456789abcde
+      </li>
+      <li
+        class="list-item hash"
+      >
+        0xabcdef1234567890
+      </li>
+    </ul>
+  </div>
+</div>
+`;

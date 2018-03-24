@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can show a loading indicator 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h3>
+      Blocks
+    </h3>
+    <p>
+      (Only showing blocks with transactions)
+    </p>
+    <span>
+      Loading blocks...
+    </span>
+    <ul />
+    <p>
+      <!-- react-text: 7 -->
+      Loaded blocks 
+      <!-- /react-text -->
+      <!-- react-text: 8 -->
+      100
+      <!-- /react-text -->
+      <!-- react-text: 9 -->
+      to 
+      <!-- /react-text -->
+      <!-- react-text: 10 -->
+      50
+      <!-- /react-text -->
+      <!-- react-text: 11 -->
+      .
+      <!-- /react-text -->
+    </p>
+    <button>
+      Load older blocks
+    </button>
+  </div>
+</div>
+`;
+
+exports[`shows a list of blocks from the BlockListService 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h3>
+      Blocks
+    </h3>
+    <p>
+      (Only showing blocks with transactions)
+    </p>
+    <ul>
+      <li
+        class="list-item"
+      >
+        <!-- react-text: 6 -->
+        1
+        <!-- /react-text -->
+        <!-- react-text: 7 -->
+        - 
+        <!-- /react-text -->
+        <span
+          class="hash"
+        >
+          0x2a
+        </span>
+      </li>
+      <li
+        class="list-item"
+      >
+        <!-- react-text: 10 -->
+        2
+        <!-- /react-text -->
+        <!-- react-text: 11 -->
+        - 
+        <!-- /react-text -->
+        <span
+          class="hash"
+        >
+          0x2a
+        </span>
+      </li>
+      <li
+        class="list-item"
+      >
+        <!-- react-text: 14 -->
+        3
+        <!-- /react-text -->
+        <!-- react-text: 15 -->
+        - 
+        <!-- /react-text -->
+        <span
+          class="hash"
+        >
+          0x2a
+        </span>
+      </li>
+      <li
+        class="list-item"
+      >
+        <!-- react-text: 18 -->
+        4
+        <!-- /react-text -->
+        <!-- react-text: 19 -->
+        - 
+        <!-- /react-text -->
+        <span
+          class="hash"
+        >
+          0x2a
+        </span>
+      </li>
+      <li
+        class="list-item"
+      >
+        <!-- react-text: 22 -->
+        5
+        <!-- /react-text -->
+        <!-- react-text: 23 -->
+        - 
+        <!-- /react-text -->
+        <span
+          class="hash"
+        >
+          0x2a
+        </span>
+      </li>
+    </ul>
+    <p>
+      <!-- react-text: 26 -->
+      Loaded blocks 
+      <!-- /react-text -->
+      <!-- react-text: 27 -->
+      100
+      <!-- /react-text -->
+      <!-- react-text: 28 -->
+      to 
+      <!-- /react-text -->
+      <!-- react-text: 29 -->
+      50
+      <!-- /react-text -->
+      <!-- react-text: 30 -->
+      .
+      <!-- /react-text -->
+    </p>
+    <button>
+      Load older blocks
+    </button>
+  </div>
+</div>
+`;

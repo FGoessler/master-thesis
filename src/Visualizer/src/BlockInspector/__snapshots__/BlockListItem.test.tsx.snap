@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shows information about a block 1`] = `
+<div>
+  <li
+    data-reactroot=""
+    class="list-item"
+  >
+    <!-- react-text: 2 -->
+    3
+    <!-- /react-text -->
+    <!-- react-text: 3 -->
+    - 
+    <!-- /react-text -->
+    <span
+      class="hash"
+    >
+      0x2a
+    </span>
+  </li>
+</div>
+`;

@@ -1,0 +1,27 @@
+
+.details {
+    background-color: #f8f5ec;
+}
+
+.details td {
+    padding: 5px;
+}
+
+.details td {
+    vertical-align: top;
+}
+
+.details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details ul li {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.details ul li:last-child {
+    border-bottom: none;
+}

@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  payment-server:
+    command: npm run watch
+    volumes:
+      - ./PaymentServer:/usr/src/app
+    ports:
+      - "3000:3000"
+      - "9229:9229"

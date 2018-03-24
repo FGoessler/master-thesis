@@ -1,0 +1,57 @@
+{
+  "name": "payment-server",
+  "version": "0.1.0",
+  "author": "Florian Gößler <mail@floriangoessler.de>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm run build",
+    "test": "jest",
+    "watch-test": "concurrently -k \"tsc -w\" \"jest --watchAll\"",
+    "build": "npm run copy-js && npm run build-ts && npm run tslint",
+    "copy-js": "rm -fR dist && cp -R src/ dist",
+    "build-ts": "./node_modules/typescript/bin/tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "prestart": "npm run build",
+    "start": "NODE_ENV=production node dist/index.js",
+    "prewatch": "npm run build",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"nodemon --delay 3 --inspect=localhost:9229 dist/index.js\"",
+    "watch-ts": "./node_modules/typescript/bin/tsc -w"
+  },
+  "dependencies": {
+    "async-lock": "^1.0.0",
+    "bignumber.js": "^4.0.2",
+    "ethereumjs-abi": "0.6.4",
+    "ethereumjs-util": "5.1.1",
+    "express": "4.15.2",
+    "keythereum": "0.5.2",
+    "lodash": "4.17.4",
+    "redis": "^2.7.1",
+    "solc": "0.4.13",
+    "uuid": "^3.1.0",
+    "web3": "0.19.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.36",
+    "@types/jest": "^20.0.4",
+    "@types/lodash": "^4.14.71",
+    "@types/redis": "^2.6.0",
+    "concurrently": "^3.5.0",
+    "jest": "^20.0.4",
+    "nodemon": "^1.11.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.2"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/dist/"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.js?(x)",
+      "**/?(*.)(spec|test).js?(x)"
+    ]
+  }
+}

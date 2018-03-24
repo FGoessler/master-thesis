@@ -1,0 +1,107 @@
+version: "2"
+
+services:
+
+  payment-server-1:
+    image: ${DOCKER_REGISTRY_URL}/fgps/payment-server:latest
+    command: npm run start
+    cpu_shares: 200
+    mem_limit: 524288000
+    ports:
+      - "3001:3000"
+    links:
+      - "persistence-1:persistence"
+    environment:
+      ETH_NODE_URL: ${ETH_NODE_1_URL}
+    logging:
+      driver: "awslogs"
+      options:
+         awslogs-region: "eu-west-1"
+         awslogs-group: "fgps"
+         awslogs-stream-prefix: "payment-server-1"
+
+  persistence-1:
+    image: redis:3.0.7
+    logging:
+      driver: "awslogs"
+      options:
+         awslogs-region: "eu-west-1"
+         awslogs-group: "fgps"
+         awslogs-stream-prefix: "redis-1"
+
+
+  payment-server-2:
+    image: ${DOCKER_REGISTRY_URL}/fgps/payment-server:latest
+    command: npm run start
+    cpu_shares: 200
+    mem_limit: 524288000
+    ports:
+      - "3002:3000"
+    links:
+      - "persistence-2:persistence"
+    environment:
+      ETH_NODE_URL: ${ETH_NODE_2_URL}
+    logging:
+      driver: "awslogs"
+      options:
+         awslogs-region: "eu-west-1"
+         awslogs-group: "fgps"
+         awslogs-stream-prefix: "payment-server-2"
+
+  persistence-2:
+    image: redis:3.0.7
+    logging:
+      driver: "awslogs"
+      options:
+         awslogs-region: "eu-west-1"
+         awslogs-group: "fgps"
+         awslogs-stream-prefix: "redis-2"
+
+  # Actual Services
+
+  persistence-service:
+    image: ${DOCKER_REGISTRY_URL}/fgps/persistence-service:latest
+    cpu_shares: 200
+    mem_limit: 224288000
+    links:
+      - payment-server-1
+    ports:
+      - "8001:3000"
+    logging:
+      driver: "awslogs"
+      options:
+         awslogs-region: "eu-west-1"
+         awslogs-group: "fgps"
+         awslogs-stream-prefix: "persistence-service"
+
+  random-nr-service:
+    image: ${DOCKER_REGISTRY_URL}/fgps/random-nr-service:latest
+    cpu_shares: 200
+    mem_limit: 224288000
+    links:
+      - payment-server-1
+    ports:
+      - "8002:3000"
+    logging:
+      driver: "awslogs"
+      options:
+         awslogs-region: "eu-west-1"
+         awslogs-group: "fgps"
+         awslogs-stream-prefix: "random-nr-service"
+
+  public-service:
+    image: ${DOCKER_REGISTRY_URL}/fgps/public-service:latest
+    cpu_shares: 200
+    mem_limit: 224288000
+    links:
+      - persistence-service
+      - random-nr-service
+      - payment-server-2
+    ports:
+      - "8003:3000"
+    logging:
+      driver: "awslogs"
+      options:
+         awslogs-region: "eu-west-1"
+         awslogs-group: "fgps"
+         awslogs-stream-prefix: "public-service"

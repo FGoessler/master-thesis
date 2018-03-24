@@ -1,0 +1,13 @@
+{
+  "name": "payment-client-lib",
+  "version": "0.1.0",
+  "author": "Florian Gößler <mail@floriangoessler.de>",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bignumber.js": "4.0.2",
+    "ethereumjs-util": "5.1.1",
+    "keythereum": "0.5.2",
+    "lodash": "4.17.4"
+  }
+}

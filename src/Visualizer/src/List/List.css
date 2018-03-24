@@ -1,0 +1,22 @@
+
+.list {
+    background-color: #f1ede4;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    border-right: 1px lightgrey solid;
+}
+
+.list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-item {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.list-item:hover {
+    background-color: #f7d87c;
+}

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lists the contract data 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h4>
+      Contract Data
+    </h4>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            a
+          </td>
+          <td
+            class="hash"
+          >
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            b
+          </td>
+          <td
+            class="hash"
+          >
+            123
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

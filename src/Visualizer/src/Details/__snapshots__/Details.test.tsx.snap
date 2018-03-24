@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders address details 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h3>
+      0x1234
+    </h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            Address
+          </td>
+          <td
+            class="hash"
+          >
+            0x1234
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Balance
+          </td>
+          <td>
+            5000
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      No Contract Data
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders block details 1`] = `
+<div>
+  <div
+    data-reactroot=""
+  >
+    <h3>
+      0x2a
+    </h3>
+    <table
+      class="detailsTable"
+    >
+      <tbody>
+        <tr>
+          <td>
+            Hash
+          </td>
+          <td
+            class="hash"
+          >
+            0x2a
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Number
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Timestamp
+          </td>
+          <td>
+            Fri, 02 Jan 1970 03:46:40 GMT
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Parent Hash
+          </td>
+          <td
+            class="hash"
+          >
+            0x1a
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Transactions
+          </td>
+          <td>
+            <ul />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`renders loading state 1`] = `
+<div>
+  <h3
+    data-reactroot=""
+  >
+    Loading...
+  </h3>
+</div>
+`;
+
+exports[`renders nothing selected state 1`] = `
+<div>
+  <h3
+    data-reactroot=""
+  >
+    Nothing selected.
+  </h3>
+</div>
+`;

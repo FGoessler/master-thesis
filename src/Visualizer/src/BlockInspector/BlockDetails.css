@@ -1,0 +1,8 @@
+.json {
+    max-width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+    font-family: monospace;
+    background-color: aliceblue;
+}

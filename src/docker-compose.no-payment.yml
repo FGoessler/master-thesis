@@ -1,0 +1,41 @@
+version: "2"
+
+services:
+
+  # Actual Services
+
+  persistence-service:
+    build:
+      context: ./ClientSide
+      dockerfile: ./Dockerfiles/Dockerfile-PersistenceService
+    image: persistence-service
+    container_name: persistence-service
+    ports:
+      - "8001:3000"
+    environment:
+      - PAYMENT_INACTIVE=true
+
+  random-nr-service:
+    build:
+      context: ./ClientSide
+      dockerfile: ./Dockerfiles/Dockerfile-RandomNrService
+    image: random-nr-service
+    container_name: random-nr-service
+    ports:
+      - "8002:3000"
+    environment:
+      - PAYMENT_INACTIVE=true
+
+  public-service:
+    build:
+      context: ./ClientSide
+      dockerfile: ./Dockerfiles/Dockerfile-PublicService
+    image: public-service
+    container_name: public-service
+    links:
+      - persistence-service
+      - random-nr-service
+    ports:
+      - "8003:3000"
+    environment:
+      - PAYMENT_INACTIVE=true

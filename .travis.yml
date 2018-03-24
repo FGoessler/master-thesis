@@ -1,0 +1,8 @@
+language: node_js
+sudo: false
+node_js:
+  - "8.1"
+env:
+  - TEST_DIR=src/PaymentServer
+  - TEST_DIR=src/Visualizer
+script: cd $TEST_DIR && yarn && yarn test

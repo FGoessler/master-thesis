@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+
+  ethnode:
+    image: ${DOCKER_REGISTRY_URL}/fgps/geth-node:latest
+    ports:
+      - "30303:30303"
+      - "30303:30303/udp"
+      - "8545:8545"
+    cpu_shares: 1000
+    mem_limit: 2000000000
+    entrypoint: /root/start.sh
+    command: '--mine --datadir=/root/.ethereum/devchain --unlock 0xf1a25936b922d122e03ff95ebd1765b0c2ec8f08,0xbe32869ae95f64fae54353a08ed65e63cef4bac7,0x0ff5c2f25c394a1e69153d658d10fec6a90bc668,0xaae00f546ab93bf19cc59b9dbf59db23076598d7 --password /root/data/password --nodekeyhex=091bd6067cb4612df85d9c1ff85cc47f259ced4d4cd99816b14f35650f59c322 --rpcapi "db,personal,eth,net,web3" --rpccorsdomain="*" --networkid=1234 --rpc --rpcaddr="0.0.0.0" init=/root/data/genesis.json'
+    logging:
+      driver: "awslogs"
+      options:
+         awslogs-region: "eu-west-1"
+         awslogs-group: "fgps"
+         awslogs-stream-prefix: "ethnode"
